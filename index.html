@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Diagnóstico Formativo | Dakar, Senegal</title>
+    <!-- Hoja de estilos CSS externa -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js CDN para los gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome para los Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-brand">
+                    <i class="fa-solid fa-hotel"></i>
+                    <div>
+                        <h1>Diagnóstico Formativo HORECA</h1>
+                        <p>Región de Dakar & Petite Côte (Senegal)</p>
+                    </div>
+               
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+
+            <!-- Banner Principal -->
+            <div class="hero-banner">
+                <p class="hero-subtitle">Informe de Análisis de Oferta y Demanda</p>
+                <h2 class="hero-title">Ecosistema Formativo en Hostelería, Turismo y Restauración</h2>
+                <p class="hero-text">
+                    Evaluación estratégica del impacto económico, la empleabilidad y la oferta de capacitación profesional en Dakar, Diamniadio y la Petite Côte para la adaptación de acciones formativas.
+                </p>
+            </div>
+
+            <!-- Métricas / KPIs -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div>
+                        <p class="kpi-label">Impacto Total PIB</p>
+                        <h3 class="kpi-value">11% - 13%</h3>
+                        <p class="kpi-subtext emerald"><i class="fa-solid fa-arrow-up"></i> 6-7% Directo</p>
+                    </div>
+                    <div class="kpi-icon amber"><i class="fa-solid fa-chart-pie"></i></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div>
+                        <p class="kpi-label">Empleo Directo Formal</p>
+                        <h3 class="kpi-value">30.000</h3>
+                        <p class="kpi-subtext">Puestos registrados</p>
+                    </div>
+                    <div class="kpi-icon blue"><i class="fa-solid fa-user-tie"></i></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div>
+                        <p class="kpi-label">Empleo Auxiliar/Informal</p>
+                        <h3 class="kpi-value">+100.000</h3>
+                        <p class="kpi-subtext">Trabajadores movilizados</p>
+                    </div>
+                    <div class="kpi-icon indigo"><i class="fa-solid fa-users"></i></div>
+                </div>
+
+                <div class="kpi-card">
+                    <div>
+                        <p class="kpi-label">Proyección de Empleo</p>
+                        <h3 class="kpi-value">+5.000</h3>
+                        <p class="kpi-subtext emerald">Expansión Diamniadio/Saly</p>
+                    </div>
+                    <div class="kpi-icon emerald"><i class="fa-solid fa-briefcase"></i></div>
+                </div>
+            </div>
+
+            <!-- BLOQUE 1: Diagnóstico e Impacto Económico con Desglose de Subsectores -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-title-group">
+                        <span class="section-number">1</span>
+                        <h2 class="section-title">Diagnóstico Sectorial e Impacto Económico</h2>
+                    </div>
+                </div>
+
+                <div class="two-columns">
+                    <div class="text-content">
+                        <p>
+                            El sector turístico, hotelero y de restauración constituye la <strong>segunda fuente de divisas de Senegal</strong> tras la pesca. La macro-región de Dakar (Plateau, Almadies, Diamniadio) junto a la Petite Côte concentra más del <strong>70% de la capacidad turística nacional</strong>.
+                        </p>
+                        
+                        <!-- PUNTOS CLAVE DEL MERCADO LABORAL REFINADOS -->
+                        <div class="highlight-box">
+                            <h4>Puntos clave del mercado laboral:</h4>
+                            <ul class="market-points-list">
+                                <li>
+                                    <strong>Base Operativa masiva y alta rotación (>70%):</strong> 
+                                    El 70-75% del empleo corresponde a puestos de entrada (camareros, personal de limpieza, ayudantes de cocina). Sufren una rotación anual superior al 30% debido a la exigencia física, la temporalidad y la búsqueda constante de mejores salarios, generando altos costes de reentrenamiento para las empresas.
+                                </li>
+                                <li>
+                                    <strong>Déficit crítico en mandos intermedios (~20%):</strong> 
+                                    Escasez severa de talento local cualificado para funciones de supervisión y coordinación (jefes de recepción, segundos de cocina, *maîtres*). Las empresas carecen de personal intermedio preparado para liderar equipos sin un proceso formativo previo exhaustivo.
+                                </li>
+                                <li>
+                                    <strong>Expatriación en la alta dirección (5-10%):</strong> 
+                                    Los puestos directivos en cadenas hoteleras internacionales se cubren mayoritariamente con perfiles extranjeros. Esto ocurre por la falta de titulaciones superiores locales alineadas con los estándares globales de lujo, finanzas avanzadas y *Revenue Management*.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico PIB -->
+                    <div class="chart-box">
+                        <h3 class="chart-title">Aportación Directa al PIB Nacional (% sobre el Total)</h3>
+                        <div class="chart-container">
+                            <canvas id="pibChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESGLOSE DE SUBSECTORES RESPECTO AL PIB -->
+                <div class="subsectors-container">
+                    <h3 class="subsectors-heading"><i class="fa-solid fa-chart-column mr-2 text-amber-500"></i> Desglose Detallado de Subsectores respecto al PIB Directo</h3>
+                    
+                    <div class="subsectors-grid">
+                        <!-- Alojamiento -->
+                        <div class="subsector-item">
+                            <span class="subsector-badge amber">Alojamiento</span>
+                            <h4>A. Hoteles y Alojamiento (~45% del PIB Sectorial)</h4>
+                            <p><strong>Aportación directa:</strong> Representa entre el 2,8% y el 3,2% del PIB nacional.</p>
+                            <p><strong>Origen del valor:</strong> Hoteles urbanos de negocios en Dakar (Plateau, Almadies) y la infraestructura resort en la Petite Côte (Saly, Mbour, Nianing). Mayor movilización de inversión fija y capital inmobiliario.</p>
+                        </div>
+
+                        <!-- Restauración -->
+                        <div class="subsector-item">
+                            <span class="subsector-badge blue">Restauración</span>
+                            <h4>B. Restauración Profesional (~33% del PIB Sectorial)</h4>
+                            <p><strong>Aportación directa:</strong> Representa entre el 2,0% y el 2,3% del PIB nacional.</p>
+                            <p><strong>Origen del valor:</strong> Establecimientos de restauración comercial, servicios de catering (eventos y aeronáutico en el Aeropuerto AIBD) y la restauración organizada en Dakar.</p>
+                            <p class="subsector-note"><em>Nota: Si se sumara la restauración informal y las «gargottes»/dibiteries de barrio, su impacto en la economía real añadiría un 1,5% - 2,0% adicional en valor no registrado.</em></p>
+                        </div>
+
+                        <!-- Servicios / Agencias -->
+                        <div class="subsector-item">
+                            <span class="subsector-badge emerald">Servicios y Ocio</span>
+                            <h4>C. Servicios Turísticos, Agencias y Ocio (~22% del PIB Sectorial)</h4>
+                            <p><strong>Aportación directa:</strong> Representa entre el 1,2% y el 1,5% del PIB nacional.</p>
+                            <p><strong>Origen del valor:</strong> Agencias de viajes, turoperadores, gestión de congresos y eventos (MICE en el Centro de Conferencias Abdou Diouf de Diamniadio), guías oficiales y atracciones/museos (Isla de Gorée, Museo de las Civilizaciones Negras).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOQUE 2: Desglose del Empleo -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-title-group">
+                        <span class="section-number">2</span>
+                        <h2 class="section-title">Estructura del Empleo Directo e Indirecto</h2>
+                    </div>
+                </div>
+
+                <div class="two-columns">
+                    <!-- Gráfico Empleo Directo -->
+                    <div class="chart-box">
+                        <h3 class="chart-title">Distribución del Empleo Directo Formal (30.000 puestos)</h3>
+                        <div class="chart-container">
+                            <canvas id="empleoDirectoChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico Empleo Informal -->
+                    <div class="chart-box">
+                        <h3 class="chart-title">Distribución Sector Indirecto / Informal (+100.000 trabajadores)</h3>
+                        <div class="chart-container">
+                            <canvas id="empleoInformalChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOQUE 3: Necesidades de Formación -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-title-group">
+                        <span class="section-number">3</span>
+                        <h2 class="section-title">Necesidades Específicas del Sector vs. Demandas del Usuario</h2>
+                    </div>
+                </div>
+
+                <div class="three-cards-grid">
+                    <div class="feature-card amber">
+                        <div class="feature-icon amber"><i class="fa-solid fa-language"></i></div>
+                        <h3>Idiomas y Digitalización</h3>
+                        <p>Alta demanda de <strong>Inglés Profesional Hôtelier</strong> y dominio de software de gestión (<strong>PMS Opera, Amadeus, Revenue Management</strong>) en el área urbana de Dakar.</p>
+                    </div>
+
+                    <div class="feature-card blue">
+                        <div class="feature-icon blue"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Higiene y Estándares</h3>
+                        <p>Requisito de capacitación estricta en normativa <strong>HACCP</strong>, control de costes de cocina (<em>Food Cost</em>) y protocolos internacionales de servicio en sala.</p>
+                    </div>
+
+                    <div class="feature-card emerald">
+                        <div class="feature-icon emerald"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <h3>Preferencia del Alumno</h3>
+                        <p>Los usuarios demandan <strong>cursos modulares cortos (3 a 9 meses)</strong> con un 60-70% de carga práctica e inclusión de prácticas profesionales garantizadas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOQUE 4: Mapeo de Centros de Formación con Enlaces -->
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="section-title-group">
+                        <span class="section-number">4</span>
+                        <h2 class="section-title">Mapeo y Revisión de Centros de Formación</h2>
+                    </div>
+                    <span class="section-hint"><i class="fa-solid fa-arrow-pointer"></i> Clic en el nombre para ir a la web oficial / fuente</span>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Formación Concreta</th>
+                                <th>Centro Formativo</th>
+                                <th>Localización</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 1. Dakar y alrededores -->
+                            <tr><td colspan="3" style="background-color: #f8fafc; font-weight: bold; color: #1e293b;">1. Dakar y alrededores</td></tr>
+                            <tr>
+                                <td>BEP en restauración, Cocina y pastelería profesional, Servicio de restaurante y bar, Gestión hotelera (BTS), Turismo (BTT y BTST), Guía turístico (Certificado)</td>
+                                <td>
+                                    <a href="https://www.mcat.gouv.sn" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        École Nationale de Formation Hôtelière et Touristique (ENFHT) <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>2 Avenue Albert Sarraut, Dakar-Plateau, Dakar</td>
+                            </tr>
+                            <tr>
+                                <td>BEP en hostelería y restauración, BTS en gestión hotelera, BTS en turismo, Cualificación profesional de cocinero/pastelero</td>
+                                <td>
+                                    <a href="https://www.afpa.sn" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Africaine des Formations Professionnelles en Alternance (AFPA) <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>30, Fass Delorme, Dakar</td>
+                            </tr>
+                            <tr>
+                                <td>BEP en restauración, CAP/DEP en restauración</td>
+                                <td>
+                                    <a href="https://senformation.com" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Institut Supérieur Les Marmitons <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Rue 13, junto a Clinique Croix-Bleue, Castors, Dakar</td>
+                            </tr>
+                            <tr>
+                                <td>Cocina, pastelería y servicio de sala</td>
+                                <td>
+                                    <a href="https://www.ipham-ifpme.sn" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Groupe IPHAM–IFPME <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Keur Massar Nord, Dakar</td>
+                            </tr>
+                            <tr>
+                                <td>Formación profesional en cocina, restauración y turismo</td>
+                                <td>
+                                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        IFHOT Sokhna Ndiaye <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Keur Massar, Dakar</td>
+                            </tr>
+                            <tr>
+                                <td>Cocina profesional y formación en hostelería</td>
+                                <td>
+                                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Institut de Formation Hôtelière de Ouakam (IFHO) <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Ouakam, Dakar</td>
+                            </tr>
+                            <tr>
+                                <td>Formación en panadería, pastelería y chocolatería</td>
+                                <td>
+                                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Institut Sénégalais de la Boulangerie et de la Pâtisserie (ISBP) <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Sacré-Cœur III / Pyrotechnie, Dakar</td>
+                            </tr>
+
+                            <!-- 2. Malicounda, Nianing y alrededores -->
+                            <tr><td colspan="3" style="background-color: #f8fafc; font-weight: bold; color: #1e293b;">2. Malicounda, Nianing y alrededores</td></tr>
+                            <tr>
+                                <td>Formación en oficios de hostelería</td>
+                                <td>
+                                    <a href="https://www.mbourtv.com" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Centro de formación en turismo (Malicounda / SAPCO) <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Nianing, municipio de Malicounda</td>
+                            </tr>
+                            <tr>
+                                <td>Formación profesional en hostelería y restauración / Sesiones cortas para la empleabilidad</td>
+                                <td>
+                                    <a href="https://gite-ecole-mbour.sn" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        CFPI Gîte-École de Mbour <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Mbour</td>
+                            </tr>
+                            <tr>
+                                <td>CAP en cocina y restauración, BEP en hostelería y restauración, Diploma de cualificación en cocina y restauración</td>
+                                <td>
+                                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Centre de Formation Professionnelle Frédéric Ozanam (CFFO) <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Warang Socé, departamento de Mbour</td>
+                            </tr>
+                            <tr>
+                                <td>Formación profesional en gestión hotelera y restauración, BTS en gestión hotelera y restauración</td>
+                                <td>
+                                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Centre Privé de Formation Professionnelle Hôtellerie-Restauration-Santé (CPFP HRS) <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Mbour, carretera nacional N1</td>
+                            </tr>
+                            <tr>
+                                <td>Formación profesional en cocina</td>
+                                <td>
+                                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="center-link">
+                                        Centre de Formation Professionnelle de Mbour (CFP) <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </td>
+                                <td>Barrio de Santessou/Santassou, Mbour</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- RESUMEN VISUAL DE LA OFERTA FORMATIVA -->
+                <div style="margin-top: 2rem;">
+                    <h3 class="chart-title"><i class="fa-solid fa-chart-bar mr-2 text-amber-500"></i> Recuento y Distribución de Acciones Formativas por Región y Sector</h3>
+                    
+                    <div class="two-columns" style="align-items: center; margin-top: 1rem;">
+                        <!-- Tabla resumen -->
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Región</th>
+                                        <th>Hostelería y Restauración</th>
+                                        <th>Turismo</th>
+                                        <th>Gestión Hotelera</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Dakar</strong></td>
+                                        <td>10</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Malicounda (Nianing)</strong></td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mbour y Warang</strong></td>
+                                        <td>7</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr style="background-color: #f1f5f9; font-weight: bold;">
+                                        <td>Total de referencias</td>
+                                        <td>18</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem; font-style: italic;">
+                                Recuento orientativo de las acciones formativas mencionadas anteriormente. Algunas formaciones son transversales y pueden estar contabilizadas en más de un sector; los totales no representan cursos únicos verificados.
+                            </p>
+                        </div>
+
+                        <!-- Gráfica visual fácil de leer -->
+                        <div class="chart-box">
+                            <div class="chart-container" style="position: relative; height:260px;">
+                                <canvas id="ofertaChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Informe Diagnóstico Formativo HORECA — Elaborado para la Adaptación de Acciones Formativas en Dakar, Senegal.</p>
+        </div>
+    </footer>
+
+    <!-- Lógica JavaScript para Chart.js -->
+    <script>
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#64748b';
+
+        // 1. Gráfico PIB
+        const ctxPib = document.getElementById('pibChart').getContext('2d');
+        new Chart(ctxPib, {
+            type: 'doughnut',
+            data: {
+                labels: ['Hoteles / Alojamiento (3%)', 'Restauración Formada (2.2%)', 'Servicios / Agencias (1.3%)', 'Resto del PIB (93.5%)'],
+                datasets: [{
+                    data: [3.0, 2.2, 1.3, 93.5],
+                    backgroundColor: ['#f59e0b', '#3b82f6', '#10b981', '#e2e8f0'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } }
+                },
+                cutout: '70%'
+            }
+        });
+
+        // 2. Gráfico Empleo Directo
+        const ctxDirecto = document.getElementById('empleoDirectoChart').getContext('2d');
+        new Chart(ctxDirecto, {
+            type: 'bar',
+            data: {
+                labels: ['Hoteles / Alojamiento', 'Restauración Prof.', 'Agencias / MICE'],
+                datasets: [{
+                    label: '% de Empleo Directo',
+                    data: [50, 33, 17],
+                    backgroundColor: ['#f59e0b', '#3b82f6', '#10b981'],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { max: 60, grid: { display: false } },
+                    y: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 3. Gráfico Empleo Informal
+        const ctxInformal = document.getElementById('empleoInformalChart').getContext('2d');
+        new Chart(ctxInformal, {
+            type: 'pie',
+            data: {
+                labels: ['Restauración Informal (40%)', 'Transporte Turístico (23%)', 'Artesanía y Comercio (19%)', 'Otros / Guías (18%)'],
+                datasets: [{
+                    data: [40, 23, 19, 18],
+                    backgroundColor: ['#f59e0b', '#6366f1', '#10b981', '#cbd5e1'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } }
+                }
+            }
+        });
+
+        // 4. Gráfico Oferta Formativa por Región y Sector
+        const ctxOferta = document.getElementById('ofertaChart').getContext('2d');
+        new Chart(ctxOferta, {
+            type: 'bar',
+            data: {
+                labels: ['Dakar', 'Malicounda (Nianing)', 'Mbour y Warang'],
+                datasets: [
+                    {
+                        label: 'Hostelería y Restauración',
+                        data: [10, 1, 7],
+                        backgroundColor: '#f59e0b',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Turismo',
+                        data: [3, 1, 1],
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Gestión Hotelera',
+                        data: [2, 0, 1],
+                        backgroundColor: '#10b981',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { beginAtZero: true, grid: { borderDash: [2, 4] }, ticks: { precision: 0 } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
